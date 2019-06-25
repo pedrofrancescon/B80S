@@ -3,7 +3,7 @@ from socket import *
 from encryption import Crypto
 from bitascii import String
 
-host = "10.183.11.162"
+host = "10.183.15.253"
 port = 13000
 addr = (host, port)
 UDPSock = socket(AF_INET, SOCK_DGRAM)
@@ -17,7 +17,7 @@ while True:
 
     # executar algorítmo b8zs em 'bits'
 
-    UDPSock.sendto(bits.encode(), addr)
+    UDPSock.sendto(bytes([(i+1) for i in bits]), addr)
     if data == "exit":
         print("Aplicação encerrada!")
         break

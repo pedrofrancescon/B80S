@@ -15,7 +15,7 @@ crypto = Crypto('senha')
 print("Waiting to receive messages...")
 while True:
     (received, addr) = UDPSock.recvfrom(buf)
-    bits = received.decode()
+    bits = [(i-1) for i in list(received)]
 
     # executar algorítmo de decodificação em 'bits'
 
