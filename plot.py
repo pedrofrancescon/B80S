@@ -19,7 +19,7 @@ def ploting(graph, wMessage, bMessage, rMessage, client):
 		for i in range(len(rMessage)):
 			result += str(rMessage[i])
 
-		plt.title('Mensagem: {}, Binario: {}, Saida: {}'.format(wMessage, binary, result))
+		plt.title('Mensagem: {}\nBinario: {}\nSaida: {}'.format(wMessage, binary, result))
 
 	else:
 		received = str()
@@ -35,7 +35,7 @@ def ploting(graph, wMessage, bMessage, rMessage, client):
 		for i in range(len(rMessage)):
 			message += str(rMessage[i])
 
-		plt.title('Recebida: {}, Binario: {}, Mensagem: {}'.format(received, decoded, message))
+		plt.title('Recebida: {}\nBinario: {}\nMensagem: {}'.format(received, decoded, message))
 
 	# plt.title('Escrita: {}\nBinario: {}\nSaida: {}\n'.format(wMessage, bMessage, rMessage))
 
