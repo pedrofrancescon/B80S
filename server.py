@@ -23,6 +23,6 @@ while True:
     print("Received message: " + decrypted)
     if decrypted == "exit":
         break
-    plot.ploting(decoded, data, bits, decoded, False)
+    plot.ploting(decoded, data, bits, decoded, True)
 UDPSock.close()
 os._exit(0)
