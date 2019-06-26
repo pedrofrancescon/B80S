@@ -3,6 +3,7 @@ from socket import *
 from encryption import Crypto
 from bitascii import String
 from encoding import B8ZS
+import plot
 
 host = ""
 port = 13000
@@ -20,9 +21,10 @@ while True:
     decoded = B8ZS.decode(bits)
     data = String.frombits(decoded)
     decrypted = crypto.decryptString(data)
+
     print("Received message: " + decrypted)
     if decrypted == "exit":
         break
-    plot.ploting(decoded, data, bits, decoded, True)
+    plot.ploting(bits, decrypted, decoded, bits, True)
 UDPSock.close()
 os._exit(0)

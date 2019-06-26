@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import platform
+import matplotlib
+matplotlib.use("TkAgg")
 
 # graph = [1, 0, -1, 1, -1, 0, 0, 1]
 # wMessage = "Mensagem Escrita"
@@ -47,13 +49,14 @@ def ploting(graph, wMessage, bMessage, rMessage, client):
 	if(platform.system() == 'Windows'):
 		mng.window.state("zoomed")
 
-	elif(platform.system() == 'Darwin'):
-		# mng.frame.state("zoomed")
-		mng.canvas.state("zoomed")
+	# elif(platform.system() == 'Darwin'):
+	# 	# mng.frame.state("zoomed")
+	# 	mng.canvas.state("zoomed")
 
 
 	# plt.show()
 
-	plt.show(block=False)
-	plt.pause(3)
-	plt.close()
+	plt.show()
+	# plt.pause(3)
+	# plt.close()
+
