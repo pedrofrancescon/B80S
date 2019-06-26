@@ -49,7 +49,7 @@ def ploting(graph, wMessage, bMessage, rMessage, client):
 
 	elif(platform.system() == 'Darwin'):
 		# mng.frame.state("zoomed")
-		# mng.canvas.state("zoomed")
+		mng.canvas.state("zoomed")
 
 
 	# plt.show()
