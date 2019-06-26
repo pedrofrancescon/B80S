@@ -1,10 +1,11 @@
 import os
+import plot
 from socket import *
 from encryption import Crypto
 from bitascii import String
 from encoding import B8ZS
 
-host = "10.183.7.141"
+host = "172.20.10.2"
 port = 13000
 addr = (host, port)
 UDPSock = socket(AF_INET, SOCK_DGRAM)
@@ -27,5 +28,6 @@ while True:
     if data == "exit":
         print("Aplicação encerrada!")
         break
+    plot.ploting(encoded, data, bits, encoded, True)
 UDPSock.close()
 os._exit(0)
