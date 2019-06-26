@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import platform
 
 # graph = [1, 0, -1, 1, -1, 0, 0, 1]
 # wMessage = "Mensagem Escrita"
@@ -42,7 +43,13 @@ def ploting(graph, wMessage, bMessage, rMessage, client):
 	plt.ylabel('Polaridade')
 	plt.xlabel('Tempo')
 	mng = plt.get_current_fig_manager()
-	mng.window.state("zoomed")
+
+	if(platform.system() == 'Windows'):
+		mng.window.state("zoomed")
+
+	elif(platform.system() == 'Darwin'):
+		# mng.frame.state("zoomed")
+		# mng.canvas.state("zoomed")
 
 
 	# plt.show()
