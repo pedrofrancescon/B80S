@@ -2,6 +2,7 @@ import os
 from socket import *
 from encryption import Crypto
 from bitascii import String
+from encoding import B8ZS
 
 host = ""
 port = 13000
@@ -16,10 +17,8 @@ print("Waiting to receive messages...")
 while True:
     (received, addr) = UDPSock.recvfrom(buf)
     bits = [(i-1) for i in list(received)]
-
-    # executar algorítmo de decodificação em 'bits'
-
-    data = String.frombits(bits)
+    decoded = B8ZS.decode(bits)
+    data = String.frombits(decoded)
     decrypted = crypto.decryptString(data)
     print("Received message: " + decrypted)
     if decrypted == "exit":
